@@ -1,0 +1,1 @@
+# amdcloud.kz
