@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amdcloud - Homepage</title>
+  <!-- Link to the external CSS file for styling -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Link to font for welcome backrground text -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+  <!-- jQuery library for DOM manipulation -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Link to the external JavaScript file for additional scripts -->
+  <script src="js/scripts.js"></script>
+</head>
+
+<body>
+  <div class="background-text" id="backgroundText"></div>
+
+  <!-- Icon menu container -->
+  <ul class="menu">
+    <!-- Menu toggle button -->
+    <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
+    <!-- Menu items with icons and colors -->
+    <li style="--i: 0; --clr: #cc00cc">
+      <a href="https://portainer.amdcloud.kz/" data-name="Portainer">
+        <ion-icon name="logo-apple-ar"></ion-icon>
+        <span class="tooltip left">Portainer</span>
+      </a>
+    </li>
+    <li style="--i: 1; --clr: #cc33cc">
+      <a href="https://discord.gg/Ehc3yWQ" data-name="Dominant Discord">
+        <ion-icon name="logo-discord"></ion-icon>
+        <span class="tooltip left">Dominant</span>
+      </a>
+    </li>
+    <li style="--i: 2; --clr: #cc66cc">
+      <a href="https://github.com/TeamDominant" data-name="Dominant Github">
+        <ion-icon name="logo-github"></ion-icon>
+        <span class="tooltip above">Github</span>
+      </a>
+    </li>
+    <li style="--i: 3; --clr: #cc99cc">
+      <a href="https://discord.gg/XNp27gHrJf" data-name="iC'e x TunerZ Discord">
+        <ion-icon name="logo-discord"></ion-icon>
+        <span class="tooltip right">iC'e x TunerZ</span>
+      </a>
+    </li>
+    <li style="--i: 4; --clr: #cc99ff">
+      <a href="https://privatebin.amdcloud.kz/" data-name="Privatebin">
+        <ion-icon name="document-lock-outline"></ion-icon>
+        <span class="tooltip right">Privatebin</span>
+      </a>
+    </li>
+    <li style="--i: 5; --clr: #ccccff">
+      <a href="https://red.amdcloud.kz/" data-name="Red-Dashboard">
+        <ion-icon name="hardware-chip-outline"></ion-icon>
+        <span class="tooltip right">Red-Dashboard</span>
+      </a>
+    </li>
+    <li style="--i: 6; --clr: #ccffff">
+      <a href="https://amdcloud.kz/" data-name="Homepage">
+        <ion-icon name="home-outline"></ion-icon>
+        <span class="tooltip below">Homepage</span>
+      </a>
+    </li>
+    <li style="--i: 7; --clr: #eaffff">
+      <a href="https://next.amdcloud.kz/" data-name="Nextcloud">
+        <ion-icon name="cloud-outline"></ion-icon>
+        <span class="tooltip left">Nextcloud</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Script for background welcome text -->
+  <script src="script.js"></script>
+  <!-- JavaScript code to handle menu toggle -->
+  <script>
+    $(document).ready(function() {
+      let menuToggle = document.querySelector(".menuToggle");
+      let menu = document.querySelector(".menu");
+
+      menuToggle.onclick = function () {
+        menu.classList.toggle("active");
+      };
+    });
+  </script>
+
+  <!-- Ionicons for menu icons -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+
+</body>
+</html>
