@@ -4,13 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amdcloud - Homepage</title>
-  <!-- Link to the external CSS file for styling -->
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Link to font for welcome backrground text -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
-  <!-- jQuery library for DOM manipulation -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Link to the external JavaScript file for additional scripts -->
   <script src="js/scripts.js"></script>
 </head>
 
@@ -19,74 +15,57 @@
 
   <!-- Icon menu container -->
   <ul class="menu">
-    <!-- Menu toggle button -->
-    <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
-    <!-- Menu items with icons and colors -->
-    <li style="--i: 0; --clr: #fcfcfc">
-      <a href="https://portainer.amdcloud.kz/" data-name="Portainer">
+    <li style="--i:0;">
+      <a href="https://portainer.amdcloud.kz/" style="--clr: #fcfcfc">
         <ion-icon name="logo-apple-ar"></ion-icon>
-        <span class="tooltip left">Portainer</span>
+        <span class="tooltip">Portainer</span>
       </a>
     </li>
-    <li style="--i: 1; --clr: #ffffff">
-      <a href="https://discord.gg/Ehc3yWQ" data-name="Dominant Discord">
+    <li style="--i:1;">
+      <a href="https://discord.gg/Ehc3yWQ" style="--clr: #ffffff">
         <ion-icon name="logo-discord"></ion-icon>
-        <span class="tooltip left">Dominant</span>
+        <span class="tooltip">Dominant</span>
       </a>
     </li>
-    <li style="--i: 2; --clr: #f7f7f7">
-      <a href="https://github.com/TeamDominant" data-name="Dominant Github">
+    <li style="--i:2;">
+      <a href="https://github.com/TeamDominant" style="--clr: #f7f7f7">
         <ion-icon name="logo-github"></ion-icon>
-        <span class="tooltip above">Github</span>
+        <span class="tooltip">Github</span>
       </a>
     </li>
-    <li style="--i: 3; --clr: #f3f3f3">
-      <a href="https://discord.gg/XNp27gHrJf" data-name="iC'e x TunerZ Discord">
+    <li style="--i:3;">
+      <a href="https://discord.gg/XNp27gHrJf" style="--clr: #f3f3f3">
         <ion-icon name="logo-discord"></ion-icon>
-        <span class="tooltip right">iC'e x TunerZ</span>
+        <span class="tooltip">iC'e x TunerZ</span>
       </a>
     </li>
-    <li style="--i: 4; --clr: #eaeaea">
-      <a href="https://privatebin.amdcloud.kz/" data-name="Privatebin">
+    <li style="--i:4;">
+      <a href="https://privatebin.amdcloud.kz/" style="--clr: #eaeaea">
         <ion-icon name="document-lock-outline"></ion-icon>
-        <span class="tooltip right">Privatebin</span>
+        <span class="tooltip">Privatebin</span>
       </a>
     </li>
-    <li style="--i: 5; --clr: #f3f3f3">
-      <a href="https://red.amdcloud.kz/" data-name="Red-Dashboard">
+    <li style="--i:5;">
+      <a href="https://red.amdcloud.kz/" style="--clr: #f3f3f3">
         <ion-icon name="hardware-chip-outline"></ion-icon>
-        <span class="tooltip right">Red-Dashboard</span>
+        <span class="tooltip">Red-Dashboard</span>
       </a>
     </li>
-    <li style="--i: 6; --clr: #f7f7f7">
-      <a href="https://amdcloud.kz/" data-name="Homepage">
+    <li style="--i:6;">
+      <a href="https://amdcloud.kz/" style="--clr: #f7f7f7">
         <ion-icon name="home-outline"></ion-icon>
-        <span class="tooltip below">Homepage</span>
+        <span class="tooltip">Homepage</span>
       </a>
     </li>
-    <li style="--i: 7; --clr: #ffffff">
-      <a href="https://next.amdcloud.kz/" data-name="Nextcloud">
+    <li style="--i:7;">
+      <a href="https://next.amdcloud.kz/" style="--clr: #ffffff">
         <ion-icon name="cloud-outline"></ion-icon>
-        <span class="tooltip left">Nextcloud</span>
+        <span class="tooltip">Nextcloud</span>
       </a>
     </li>
   </ul>
 
-  <!-- Script for background welcome text -->
   <script src="script.js"></script>
-  <!-- JavaScript code to handle menu toggle -->
-  <script>
-    $(document).ready(function() {
-      let menuToggle = document.querySelector(".menuToggle");
-      let menu = document.querySelector(".menu");
-
-      menuToggle.onclick = function () {
-        menu.classList.toggle("active");
-      };
-    });
-  </script>
-
-  <!-- Ionicons for menu icons -->
   <script
     type="module"
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -95,6 +74,5 @@
     nomodule
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
   ></script>
-
 </body>
 </html>

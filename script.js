@@ -1,3 +1,6 @@
+//--------------------------------------//
+//    START: Welcome background text    //
+//--------------------------------------//
 const texts = [
     "Welcome!",
     "How's your day going?",
@@ -46,3 +49,41 @@ function erase() {
 
 // Start the typing animation when the page loads
 window.onload = type;
+
+//*--------------------------------------//
+//*   END: Welcome background text       //
+//*--------------------------------------//
+
+
+//?--------------------------------------//
+//? START: Tooltip follows the cursor    //
+//?--------------------------------------//
+
+
+// Select all the links with tooltips
+const menuLinks = document.querySelectorAll('.menu a');
+
+menuLinks.forEach(link => {
+    const tooltip = link.querySelector('.tooltip');
+
+    // Add mousemove event to update tooltip position
+    link.addEventListener('mousemove', (e) => {
+        tooltip.style.left = e.clientX + 15 + 'px'; // Offset tooltip from cursor
+        tooltip.style.top = e.clientY + 15 + 'px'; // Offset tooltip from cursor
+    });
+
+    // Show tooltip when hovering over the icon
+    link.addEventListener('mouseenter', () => {
+        tooltip.style.opacity = 1;
+    });
+
+    // Hide tooltip when leaving the icon
+    link.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = 0;
+    });
+});
+
+
+//?--------------------------------------//
+//?   END: Tooltip follows the cursor    //
+//?--------------------------------------//
