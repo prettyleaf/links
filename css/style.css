@@ -1,19 +1,20 @@
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  height: 100svh;
   background: #161616;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-items: center;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 .menu li {
@@ -22,17 +23,13 @@ body {
 }
 
 .menu li:hover a {
-  transform: scale(1.1) translateX(-70px);
+  transform: scale(1.1);
   transform-origin: center;
 }
 
 .menu a {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
   text-decoration: none;
   font-size: 22px;
   border-radius: 50%;
@@ -40,15 +37,14 @@ body {
   opacity: 0; /* Initially hidden */
   transform: translateX(0); /* Centered initially */
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  align-items:center;
+  gap:1em;
 }
 
 .menu a.fade-in {
   opacity: 1;
 }
 
-.menu a.move-left {
-  transform: translateX(-70px); /* Move left further after fade-in */
-}
 
 .menu a ion-icon {
   font-size: 32px;
@@ -66,10 +62,6 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-  position: absolute;
-  left: 70px; /* Tooltip stays aligned to the right of the icon */
-  top: 50%;
-  transform: translateY(-50%);
   background-color: #222;
   color: #fff;
   padding: 4px 8px;
