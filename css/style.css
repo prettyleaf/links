@@ -1,31 +1,28 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the icons horizontally and vertically */
+  justify-content: center;
   height: 100vh;
   background: #161616;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
+
 .menu {
   display: flex;
-  flex-direction: column; /* Align icons vertically */
+  flex-direction: column;
   align-items: center;
-  gap: 20px; /* Space between icons */
+  gap: 20px;
+  position: relative;
 }
 
 .menu li {
   list-style: none;
-}
-
-@keyframes appearFromCenter {
-  to {
-    opacity: 1;
-    transform: scale(1); /* Scale up to full size */
-  }
+  position: relative; /* Ensure tooltip is positioned relative to the icon */
 }
 
 .menu a {
-  position: relative; /* Ensure tooltip is positioned relative to the icon */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +32,17 @@ body {
   font-size: 22px;
   border-radius: 50%;
   color: var(--clr);
-  transition: transform 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(0); /* Centered initially */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.menu a.fade-in {
+  opacity: 1;
+}
+
+.menu a.move-left {
+  transform: translateX(-70px); /* Move left further after fade-in */
 }
 
 .menu a ion-icon {
@@ -44,25 +51,31 @@ body {
 
 .menu a:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
+  z-index: 2; /* Ensure it stays above other elements */
 }
-
-
 
 /* * This part is related to tooltips of the icons */
 
-  /* Basic styling for the tooltips */
 .tooltip {
-  position: fixed; /* Fixed to follow the cursor */
-  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  position: absolute;
+  left: 70px; /* Adjust position to ensure tooltip stays aligned */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically relative to the icon */
+  background-color: #222; /* Darker background */
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 4px 8px; /* Smaller padding */
+  border-radius: 3px;
   white-space: nowrap;
-  font-size: 14px;
-  opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Prevent tooltip from blocking mouse events */
-  transition: opacity 0.2s ease-in-out;
-  z-index: 1000; /* Ensure tooltip is on top */
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.tooltip.fade-in {
+  opacity: 1;
+  visibility: visible;
+  left: 70px; /* Make sure tooltip stays in the correct place */
 }
 
 
