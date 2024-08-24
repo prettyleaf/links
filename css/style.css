@@ -8,8 +8,8 @@ body {
 }
 .menu {
   display: flex;
-  flex-direction: column; /* Arrange icons in a column */
-  align-items: center; /* Center icons horizontally */
+  flex-direction: column; /* Align icons vertically */
+  align-items: center;
   gap: 20px; /* Space between icons */
 }
 
@@ -25,6 +25,7 @@ body {
 }
 
 .menu a {
+  position: relative; /* Ensure tooltip is positioned relative to the icon */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,19 +51,19 @@ body {
 /* * This part is related to tooltips of the icons */
 
   /* Basic styling for the tooltips */
-  .tooltip {
-    position: fixed; /* Allows tooltip to follow the cursor */
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 14px;
-    opacity: 0;
-    pointer-events: none; /* Ensures tooltip doesn't block mouse events */
-    transition: opacity 0.2s ease-in-out;
-    z-index: 1000; /* Ensure tooltip is on top of all elements */
-  }
+.tooltip {
+  position: fixed; /* Fixed to follow the cursor */
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent tooltip from blocking mouse events */
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1000; /* Ensure tooltip is on top */
+}
 
 
 

@@ -59,30 +59,26 @@ window.onload = type;
 //? START: Tooltip follows the cursor    //
 //?--------------------------------------//
 
+document.addEventListener("DOMContentLoaded", function() {
+    const menuLinks = document.querySelectorAll('.menu a');
 
-// Select all the links with tooltips
-const menuLinks = document.querySelectorAll('.menu a');
+    menuLinks.forEach(link => {
+        const tooltip = link.querySelector('.tooltip');
 
-menuLinks.forEach(link => {
-    const tooltip = link.querySelector('.tooltip');
+        link.addEventListener('mousemove', (e) => {
+            tooltip.style.left = e.pageX + 15 + 'px'; // Offset tooltip from cursor
+            tooltip.style.top = e.pageY + 15 + 'px'; // Offset tooltip from cursor
+        });
 
-    // Add mousemove event to update tooltip position
-    link.addEventListener('mousemove', (e) => {
-        tooltip.style.left = e.clientX + 15 + 'px'; // Offset tooltip from cursor
-        tooltip.style.top = e.clientY + 15 + 'px'; // Offset tooltip from cursor
-    });
+        link.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = 1;
+        });
 
-    // Show tooltip when hovering over the icon
-    link.addEventListener('mouseenter', () => {
-        tooltip.style.opacity = 1;
-    });
-
-    // Hide tooltip when leaving the icon
-    link.addEventListener('mouseleave', () => {
-        tooltip.style.opacity = 0;
+        link.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = 0;
+        });
     });
 });
-
 
 //?--------------------------------------//
 //?   END: Tooltip follows the cursor    //
