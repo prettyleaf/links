@@ -21,6 +21,11 @@ body {
   position: relative; /* Ensure tooltip is positioned relative to the icon */
 }
 
+.menu li:hover a {
+  transform: scale(1.1) translateX(-70px);
+  transform-origin: center;
+}
+
 .menu a {
   position: relative;
   display: flex;
@@ -52,6 +57,7 @@ body {
 .menu a:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
   z-index: 2; /* Ensure it stays above other elements */
+  transform-origin: center; /* Scaling centered */
 }
 
 /* * This part is related to tooltips of the icons */
@@ -61,21 +67,20 @@ body {
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   position: absolute;
-  left: 70px; /* Adjust position to ensure tooltip stays aligned */
+  left: 70px; /* Tooltip stays aligned to the right of the icon */
   top: 50%;
-  transform: translateY(-50%); /* Center vertically relative to the icon */
-  background-color: #222; /* Darker background */
+  transform: translateY(-50%);
+  background-color: #222;
   color: #fff;
-  padding: 4px 8px; /* Smaller padding */
+  padding: 4px 8px;
   border-radius: 3px;
   white-space: nowrap;
-  font-size: 14px; /* Adjust font size as needed */
+  font-size: 14px;
 }
 
 .tooltip.fade-in {
   opacity: 1;
   visibility: visible;
-  left: 70px; /* Make sure tooltip stays in the correct place */
 }
 
 
