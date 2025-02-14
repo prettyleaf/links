@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercury - Amdcloud</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+</head>
+
+<body>
+  <div class="background-text" id="backgroundText"></div>
+  <style>
+    body {
+  height: 100vh;
+  height: 100svh;
+  background: #161616;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Apply the medium-thick font */
+  }
+  
+  /* Background text container */
+  .background-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    font-weight: 500; /* Medium-thick font weight */
+  }
+
+  </style>
+  <script>
+    const texts = [
+    "Welcome!",
+    "How's your day going?",
+    "Explore the Features",
+    "Powered by Dominant",
+    "Stay Connected",
+    "github.com/TeamDominant"
+];
+let textIndex = 0;
+let charIndex = 0;
+const typingSpeed = 100; // Speed of typing
+const erasingSpeed = 50; // Speed of erasing
+const delayBetweenTexts = 5000; // Delay before starting to erase
+const delayBeforeTypingNext = 250; // Delay before starting to type next text
+
+function type() {
+    const backgroundTextElement = document.getElementById('backgroundText');
+    const currentText = texts[textIndex];
+
+    if (charIndex < currentText.length) {
+        // Typing the text
+        backgroundTextElement.textContent = currentText.slice(0, charIndex + 1);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        // Pause after the text is fully written
+        setTimeout(erase, delayBetweenTexts);
+    }
+}
+
+function erase() {
+    const backgroundTextElement = document.getElementById('backgroundText');
+    const currentText = texts[textIndex];
+
+    if (charIndex > 0) {
+        // Erasing the text
+        backgroundTextElement.textContent = currentText.slice(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        // Move to the next text after erasing
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, delayBeforeTypingNext);
+    }
+}
+
+// Start the typing animation when the page loads
+window.onload = type;
+  </script>
+</body>
+</html>
